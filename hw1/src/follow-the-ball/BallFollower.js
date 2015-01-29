@@ -2,8 +2,8 @@
   'use strict';
 
   var BallFollower = function BallFollower(start, swaps) {
-    
-    this.swap = function() { 
+
+    BallFollower.swap = function() { 
       var currentposs = 0 + start;
       var len = swaps.length;
       var i = 0;
@@ -19,7 +19,7 @@
       }
       return currentposs;
     };
-    return this;
+    return BallFollower;
      // IMPLEMENT YOUR SOLUTION WITHIN THIS FUNCTION
   };
 
