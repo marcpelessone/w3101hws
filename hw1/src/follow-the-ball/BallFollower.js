@@ -3,22 +3,23 @@
 
   var BallFollower = function BallFollower(start, swaps) {
     
-    var currentposs = 0 + start;
-    var len = swaps.length;
-    var i = 0;
-    var poss = 0;
-    while (i < len)
-    {
-      if(swaps[i].indexOf(currentposs) !== -1)
+    this.swap = function() { 
+      var currentposs = 0 + start;
+      var len = swaps.length;
+      var i = 0;
+      var poss = 0;
+      while (i < len)
       {
-        poss = 1 - swaps[i].indexOf(currentposs);
-        currentposs = a[poss];
+        if(swaps[i].indexOf(currentposs) !== -1)
+        {
+          poss = 1 - swaps[i].indexOf(currentposs);
+          currentposs = swaps[i][poss];
+        }
+        i = i + 1;
       }
-      i = i + 1;
-    }
-    return currentposs;
-
-
+      return currentposs;
+    };
+    return this;
      // IMPLEMENT YOUR SOLUTION WITHIN THIS FUNCTION
   };
 
